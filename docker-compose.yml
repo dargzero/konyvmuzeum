@@ -1,0 +1,9 @@
+db:
+    image: mongo
+    ports:
+      - "27017:27017"
+
+svc:
+    build: ./svc
+    links:
+        - db
