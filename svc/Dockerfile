@@ -1,6 +1,6 @@
 FROM golang
 
-WORKDIR /konyvmuzeum-svc
+WORKDIR /svc
 COPY . .
 
 RUN go install -v ./...
