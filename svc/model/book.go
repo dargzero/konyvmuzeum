@@ -1,12 +1,11 @@
 package model
 
-// Book stores the attributes of a single book
 type Book struct {
-	Author    string
-	Title     string
-	Year      int
-	ISBN      string
-	Publisher string
-	Language  string
-	Pages     int
+	Author    string `json:"author"`
+	Title     string `json:"title"`
+	Year      int    `json:"year"`
+	ISBN      string `json:"isbn"`
+	Publisher string `json:"publisher"`
+	Language  string `json:"language"`
+	Pages     int    `json:"pages"`
 }
