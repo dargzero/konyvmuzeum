@@ -1,6 +1,8 @@
 package api
 
-import "github.com/gorilla/mux"
+import (
+	"github.com/gorilla/mux"
+)
 
 func NewRouter() *mux.Router {
 	router := mux.NewRouter().StrictSlash(true)
@@ -9,5 +11,6 @@ func NewRouter() *mux.Router {
 }
 
 func booksApi(r *mux.Router) {
-	r.HandleFunc("/books", BooksHandler)
+	r.HandleFunc("/books", BooksSearchHandler).Queries("q", "{q}")
+	r.HandleFunc("/books", BooksListHandler)
 }
