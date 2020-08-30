@@ -1,8 +1,11 @@
 db:
-    image: mongo
+    build: ./db
+    volumes:
+        - ./db/data:/data/db
+    environment:
+        MONGO_INITDB_DATABASE: book
     ports:
-      - "27017:27017"
-
+    - "27017:27017"
 svc:
     build: ./svc
     links:
